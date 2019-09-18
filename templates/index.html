@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../static/styles.css">
+		<title>News Spider</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Latest News</h1>
+			<div>
+				<table class="table">
+					<tr class="table-row">
+						<td>
+							<h2 class="title">World</h2>
+							<ul>
+								{% for continent, news in world.items() %}
+									{% for text, link in news.items() %}
+										<li><b>{{ continent }}: </b><a href="{{ link }}" target="_blank">{{ text }}</a></li>
+									{% endfor %}
+								{% endfor %}
+							</ul>			
+						</td>
+						<td>
+							<h2 class="title">Movies, TV, Celebrities</h2>
+							<ul>
+								{% for title, link in movies.items() %}
+									<li><a href="{{ link }}" target="_blank">{{ title }}</a></li>
+								{% endfor %}
+							</ul>
+						</td>
+					</tr>
+					<tr class="table-row">
+						<td>
+							<h2 class="title">Sports</h2>
+							<ul>
+								{% for title, link in sports.items() %}
+									<li><a href="{{ link }}" target="_blank">{{ title }}</a></li>
+								{% endfor %}
+							</ul>
+						</td>
+						<td>
+							<h2 class="title">Science</h2>
+							<ul>
+								{% for title, link in science.items() %}
+									<li><a href="{{ link }}" target="_blank">{{ title }}</a></li>
+								{% endfor %}
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<footer class="page-footer blue">
+				<p>dar-coder, copyright &copy; 2019</p>
+			</footer>	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</body>
+</html>

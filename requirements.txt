@@ -1,0 +1,5 @@
+flask
+urllib
+bs4
+requests
+ssl
